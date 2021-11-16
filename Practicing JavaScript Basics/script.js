@@ -21,7 +21,6 @@ for (var i = 0; i < videoGames.length; i++) {
   
 }
 
-
 carros.forEach((item) => {
   console.log(item.toUpperCase());
 });
