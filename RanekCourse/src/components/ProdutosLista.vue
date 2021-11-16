@@ -1,9 +1,13 @@
 <template>
-<div class="id"> 
-   <h1>Venda</h1>
-   <button >Cumprimento Patric</button>
-</div>
-  
+<section>
+  <div v-for="produto in produtos" :key="produto.id">
+    <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
+    <h2>{{produto.nome}}</h2>
+    <p>{{produto.preco}}</p>
+    <p>{{produto.descricao}}</p>
+    
+  </div>
+</section>
 </template>
 
 <script>
@@ -17,9 +21,10 @@ export default {
   },
   methods: {
       getProdutos() {
-
         axios.get("http://localhost:3000/produto").then(response=>{
-          console.log(response.data)
+         
+         this.produtos  = response.data;
+         console.log(response)
         })
     }
   },
