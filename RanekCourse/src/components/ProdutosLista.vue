@@ -20,7 +20,6 @@ export default {
         .then(response => response.json())
         .then(response => {
           this.produtos = response;
-
           console.log(this.produtos)
         });
     }
