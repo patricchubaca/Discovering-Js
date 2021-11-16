@@ -19,7 +19,7 @@ export default {
       getProdutos() {
 
         axios.get("http://localhost:3000/produto").then(response=>{
-          console.log(response)
+          console.log(response.data)
         })
     }
   },
