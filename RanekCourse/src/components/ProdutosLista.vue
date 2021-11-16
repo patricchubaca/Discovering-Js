@@ -1,7 +1,7 @@
 <template>
 <div class="id"> 
    <h1>Venda</h1>
-   <button v-on:click="greet('teste')" >Cumprimento Patric</button>
+   <button >Cumprimento Patric</button>
 </div>
   
 </template>
@@ -11,16 +11,24 @@
 export default {
   data() {
     return {
-      name: 'Patric Enderson'
+      produtos: null
     };
   },
-  methods : {
-     greet: function (event) {
-      // `this` dentro de métodos aponta para a instância Vue
-      alert('Olá ' + this.name + '!')
-   }
+  methods: {
+      getProdutos() {
+      fetch("http://localhost:3000/produto")
+        .then(response => response.json())
+        .then(response => {
+          this.produtos = response;
+
+          console.log(this.produtos)
+        });
+    }
+  },
+  created() {
+    this.getProdutos();
   }
-}
+};
 </script>
 
 <style scoped>
