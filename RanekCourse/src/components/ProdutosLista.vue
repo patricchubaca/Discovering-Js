@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from "axios";
 
 export default {
   data() {
@@ -16,12 +17,10 @@ export default {
   },
   methods: {
       getProdutos() {
-      fetch("http://localhost:3000/produto")
-        .then(response => response.json())
-        .then(response => {
-          this.produtos = response;
-          console.log(this.produtos)
-        });
+
+        axios.get("http://localhost:3000/produto").then(response=>{
+          console.log(response)
+        })
     }
   },
   created() {
