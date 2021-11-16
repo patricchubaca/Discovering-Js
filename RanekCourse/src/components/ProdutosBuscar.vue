@@ -6,8 +6,9 @@
         type="submit"
         id="lupa"
         value="Buscar"
-        @click.prevent="buscarProdutos"
+        @click.prevent="buscarProdutos(busca)"
       />
+      {{busca}}
     </form>
   </section>
 </template>
@@ -18,16 +19,13 @@ import { api } from "@/services.js";
 export default {
   data() {
     return {
-      produtos: null,
+      busca: ""
     };
   },
   methods: {
    buscarProdutos(){
-     alert('Busca os Produtos')
+     alert('Busca os Produtos' + this.busca)
    }
-  },
-  created() {
-    this.getProdutos();
   },
 };
 </script>
