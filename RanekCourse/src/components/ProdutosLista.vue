@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import {api} from "@/services.js";
 
 export default {
   data() {
@@ -21,8 +21,7 @@ export default {
   },
   methods: {
       getProdutos() {
-        axios.get("http://localhost:3000/produto").then(response=>{
-         
+        api.get("http://localhost:3000/produto").then(response=>{
          this.produtos  = response.data;
          console.log(response)
         })
