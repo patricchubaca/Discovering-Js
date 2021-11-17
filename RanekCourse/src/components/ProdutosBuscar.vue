@@ -8,7 +8,7 @@
         value="Buscar"
         @click.prevent="buscarProdutos(busca)"
       />
-      {{url}}
+   
     </form>
   </section>
 </template>
@@ -21,18 +21,6 @@ export default {
     return {
       busca: ""
     };
-  },
-  computed:{
-    url(){
-      let queryString = "";
-      for(let key in this.$route.query){
-        queryString += `&${key}=${this.$route.query[key]}`;
-      }
-
-      console.log(queryString);
-
-       return this.$route.query;
-    }
   },
   methods: {
    buscarProdutos(){
