@@ -28,3 +28,7 @@ carros.forEach((item) => {
 itensFestaAniversario.forEach((item) => {
   console.log(item.toUpperCase());
 });
+
+var c = window.location.href;
+
+console.log(c)
