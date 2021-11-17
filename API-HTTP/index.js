@@ -8,14 +8,35 @@ function puxarPost() {
 
 puxarPost();
 
+const conteudo = document.querySelector('.body');
 
 function acessarTXT() {
   fetch('./doc.txt')
-    .then(r => r.text())
-    .then(r => {
-      console.log(r)
+    .then(response => response.text())
+    .then(body => {
+      conteudo.innerText = body;
     })
 }
 
 acessarTXT();
+
+const inputCep = document.getElementById('cep');
+const btnCep = document.getElementById('btnCep');
+const conteudo1 = document.querySelector('.body1');
+
+btnCep.addEventListener('click', handleClick);
+
+function handleClick(event) {
+  event.preventDefault();
+  const cep = inputCep.value;
+  buscaCep(cep);
+}
+
+function buscaCep(cep) {
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(response => response.text())
+    .then(resultadoCep => {
+      conteudo1.innerText = resultadoCep;
+    })
+}
 
