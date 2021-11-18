@@ -31,6 +31,15 @@
       "descricao": "Esse é um novo smartphone.",
       "fotos": null
     },
+      {
+        "id": "televisao",
+        "nome": "Televisao",
+        "usuario_id": "andre@origamid.com",
+        "preco": "999",
+        "vendido": "false",
+        "descricao": "Esse é uma nova televisão.",
+        "fotos": null
+      },
     {
       "id": "tablet",
       "nome": "Tablet",

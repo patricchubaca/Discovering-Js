@@ -13,14 +13,20 @@
     <div v-else-if="produtos && produtos.length === 0">
       <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
     </div>
+     <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
   </section>
 </template>
 
 <script>
+import ProdutosPaginar from "@/components/ProdutosPaginar.vue";
 import { api } from "@/services.js";
 import { serialize } from "@/helpers.js";
 
 export default {
+  name: "ProdutosLista",
+  components: {
+    ProdutosPaginar
+  },
   data() {
     return {
       produtos: null,
@@ -37,6 +43,7 @@ export default {
     getProdutos() {
       api.get(this.url).then(response => {
         this.produtos = response.data;
+        console.log(this.produtos);
       });
     }
   },
@@ -51,8 +58,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.produtos-container {
+<style scoped>.produtos-container {
   max-width: 1000px;
   margin: 0 auto;
 }
