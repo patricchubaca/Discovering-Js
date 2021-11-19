@@ -1,7 +1,13 @@
 <template>
   <section>
     <form>
-      <input name="busca" id="busca" type="text" placeholder="Buscar..." v-model="busca" />
+      <input
+        name="busca"
+        id="busca"
+        type="text"
+        placeholder="Buscar..."
+        v-model="busca"
+      />
       <input
         type="submit"
         id="lupa"
@@ -18,19 +24,18 @@ import { api } from "@/services.js";
 export default {
   data() {
     return {
-      busca: ""
+      busca: "",
     };
   },
   methods: {
-   buscarProdutos(){
-     this.$router.push({query:{q:this.busca}})
-   }
+    buscarProdutos() {
+      this.$router.push({ query: { q: this.busca } });
+    },
   },
 };
 </script>
 
 <style scoped>
-
 form {
   max-width: 600px;
   margin: 30px auto 60px auto;
@@ -47,7 +52,7 @@ form {
 
 #busca:focus,
 #busca:hover {
-  outline: none ;
+  outline: none;
   transform: scale(1.1);
 }
 

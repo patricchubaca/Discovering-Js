@@ -1,19 +1,29 @@
 <template>
   <section class="produtos-container">
+    <h2> {{produtosTotal}}</h2>
     <div v-if="produtos && produtos.length" class="produtos">
       <div class="produto" v-for="produto in produtos" :key="produto.id">
         <router-link to="/">
-          <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
-          <p class="preco">{{produto.preco}}</p>
-          <h2 class="titulo">{{produto.nome}}</h2>
-          <p>{{produto.descricao}}</p>
+          <img
+            v-if="produto.fotos"
+            :src="produto.fotos[0].src"
+            :alt="produto.fotos[0].titulo"
+          />
+          <p class="preco">{{ produto.preco }}</p>
+          <h2 class="titulo">{{ produto.nome }}</h2>
+          <p>{{ produto.descricao }}</p>
         </router-link>
       </div>
     </div>
     <div v-else-if="produtos && produtos.length === 0">
-      <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
+      <p class="sem-resultados">
+        Busca sem resultados. Tente buscar outro termo.
+      </p>
     </div>
-     <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
+    <ProdutosPaginar
+      :produtosTotal="produtosTotal"
+      :produtosPorPagina="produtosPorPagina"
+    />
   </section>
 </template>
 
@@ -25,40 +35,49 @@ import { serialize } from "@/helpers.js";
 export default {
   name: "ProdutosLista",
   components: {
-    ProdutosPaginar
+    ProdutosPaginar,
   },
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 9
+      produtosPorPagina: 4,
+      produtosTotal: 0,
+      
     };
   },
   computed: {
     url() {
+      //Const query tras o valor passado na busca
       const query = serialize(this.$route.query);
+      //Retorno do método url /produto?_limit=8?q=note
       return `/produto?_limit=${this.produtosPorPagina}${query}`;
-    }
+    },
   },
   methods: {
     getProdutos() {
-      api.get(this.url).then(response => {
+      api.get(this.url).then((response) => {
         this.produtos = response.data;
+        this.produtosTotal = Number(response.headers["x-total-count"]);
+        console.log(response);
         console.log(this.produtos);
+
+     
       });
-    }
+    },
   },
   watch: {
     url() {
       this.getProdutos();
-    }
+    },
   },
   created() {
     this.getProdutos();
-  }
+  },
 };
 </script>
 
-<style scoped>.produtos-container {
+<style scoped>
+.produtos-container {
   max-width: 1000px;
   margin: 0 auto;
 }

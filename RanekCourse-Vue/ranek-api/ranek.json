@@ -14,7 +14,7 @@
   ],
   "produto": [
     {
-      "id": "notebook",
+      "id": "Impressora",
       "nome": "Notebook",
       "usuario_id": "andre@origamid.com",
       "preco": "4999",
@@ -23,7 +23,43 @@
       "fotos": null
     },
     {
-      "id": "smartphone",
+      "id": "Bicicleta",
+      "nome": "Notebook",
+      "usuario_id": "andre@origamid.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um novo notebook.",
+      "fotos": null
+    },
+    {
+      "id": "Patinete",
+      "nome": "Smartphone",
+      "usuario_id": "andre@origamid.com",
+      "preco": "1999",
+      "vendido": "false",
+      "descricao": "Esse é um novo smartphone.",
+      "fotos": null
+    },
+    {
+      "id": "Chaleira",
+      "nome": "Televisao",
+      "usuario_id": "andre@origamid.com",
+      "preco": "999",
+      "vendido": "false",
+      "descricao": "Esse é uma nova televisão.",
+      "fotos": null
+    },
+    {
+      "id": "Macarão",
+      "nome": "Tablet",
+      "usuario_id": "andre@origamid.com",
+      "preco": "1399",
+      "vendido": "false",
+      "descricao": "Esse é um novo tablet.",
+      "fotos": null
+    },
+    {
+      "id": "Prancha de Surf",
       "nome": "Smartphone",
       "usuario_id": "andre@origamid.com",
       "preco": "1999",
@@ -32,7 +68,7 @@
       "fotos": null
     },
       {
-        "id": "televisao",
+        "id": "Bule",
         "nome": "Televisao",
         "usuario_id": "andre@origamid.com",
         "preco": "999",
@@ -40,14 +76,40 @@
         "descricao": "Esse é uma nova televisão.",
         "fotos": null
       },
-    {
-      "id": "tablet",
-      "nome": "Tablet",
-      "usuario_id": "andre@origamid.com",
-      "preco": "1399",
-      "vendido": "false",
-      "descricao": "Esse é um novo tablet.",
-      "fotos": null
-    }
+   {
+    "id": "Chicara",
+    "nome": "Tablet",
+    "usuario_id": "andre@origamid.com",
+    "preco": "1399",
+    "vendido": "false",
+    "descricao": "Esse é um novo tablet.",
+    "fotos": null
+  },{
+    "id": "Skate",
+    "nome": "Tablet",
+    "usuario_id": "andre@origamid.com",
+    "preco": "1399",
+    "vendido": "false",
+    "descricao": "Esse é um novo tablet.",
+    "fotos": null
+  },
+  {
+    "id": "Boneca",
+    "nome": "Tablet",
+    "usuario_id": "andre@origamid.com",
+    "preco": "1399",
+    "vendido": "false",
+    "descricao": "Esse é um novo tablet.",
+    "fotos": null
+  },
+  {
+    "id": "Chupeta",
+    "nome": "Tablet",
+    "usuario_id": "andre@origamid.com",
+    "preco": "1399",
+    "vendido": "false",
+    "descricao": "Esse é um novo tablet.",
+    "fotos": null
+  }
   ]
 }
