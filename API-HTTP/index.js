@@ -1,5 +1,5 @@
 function puxarPost() {
-  fetch('https://pokeapi.co/api/v2/pokemon/3')
+  fetch('https://pokeapi.co/api/v2/pokemon/')
     .then(r => r.json())
     .then(r => {
       console.log(r)
@@ -20,6 +20,8 @@ function acessarTXT() {
 
 acessarTXT();
 
+
+
 const inputCep = document.getElementById('cep');
 const btnCep = document.getElementById('btnCep');
 const conteudo1 = document.querySelector('.body1');
@@ -34,9 +36,15 @@ function handleClick(event) {
 
 function buscaCep(cep) {
   fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response => response.text())
-    .then(resultadoCep => {
-      conteudo1.innerText = resultadoCep;
+    .then(r => r.json())
+    .then(json => {
+      console.log(json)
+      Object.keys(json).forEach(resultado => {
+        console.log(resultado)
+      });
+      //conteudo1.innerText = resultadoCep;
+      
+      
     })
 }
 
