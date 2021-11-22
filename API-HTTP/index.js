@@ -42,18 +42,8 @@ function buscaCep(cep) {
       //console.log(json)
       for (let indice in json) {
         valor = json[indice];
-       
          conteudo1.innerHTML = (conteudo1.innerHTML) + "<br>" + valor
       }
-     
-
-      //Object.keys(json).forEach(resultado => {
-       
-     //});
-      //conteudo1.innerText = resultadoCep;
-      //conteudo1.innerText = json;
-      //conteudo1.innerText = resultadoCep;
-      
     })
 }
 
