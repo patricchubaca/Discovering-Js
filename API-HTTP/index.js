@@ -39,7 +39,6 @@ function buscaCep(cep) {
     .then(r => r.json())
     .then(json => {
       console.log(json);
-      //console.log(json)
       for (let indice in json) {
         valor = json[indice];
          conteudo1.innerHTML = (conteudo1.innerHTML) + "<br>" + valor
