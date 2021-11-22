@@ -1,6 +1,6 @@
 <template>
   <section class="produtos-container">
-    <h2> {{produtosTotal}}</h2>
+    <h2>{{ produtosTotal }}</h2>
     <div v-if="produtos && produtos.length" class="produtos">
       <div class="produto" v-for="produto in produtos" :key="produto.id">
         <router-link to="/">
@@ -14,16 +14,18 @@
           <p>{{ produto.descricao }}</p>
         </router-link>
       </div>
+          <ProdutosPaginar
+      :produtosTotal="produtosTotal"
+      :produtosPorPagina="produtosPorPagina"
+    />
     </div>
     <div v-else-if="produtos && produtos.length === 0">
       <p class="sem-resultados">
         Busca sem resultados. Tente buscar outro termo.
       </p>
     </div>
-    <ProdutosPaginar
-      :produtosTotal="produtosTotal"
-      :produtosPorPagina="produtosPorPagina"
-    />
+    <PaginaCarregando v-else/>
+    
   </section>
 </template>
 
@@ -40,12 +42,10 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 4,
+      produtosPorPagina: 6,
       produtosTotal: 0,
-      
     };
   },
-  //Fica es 
   computed: {
     url() {
       //Const query tras o valor passado na busca
@@ -56,15 +56,18 @@ export default {
   },
   methods: {
     getProdutos() {
-      api.get(this.url).then((response) => {
+      setTimeout(()=>{
+        api.get(this.url).then((response) => {
         this.produtos = response.data;
         this.produtosTotal = Number(response.headers["x-total-count"]);
         console.log(response);
-        console.log(this.produtos);
+     
       });
+      },1000)
+      
     },
   },
-    //Fica de olho em qualquer alteraçãa ou chamada
+  //Fica de olho em qualquer alteraçãa ou chamada
   watch: {
     url() {
       this.getProdutos();
