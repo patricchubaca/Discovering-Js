@@ -45,6 +45,7 @@ export default {
       
     };
   },
+  //Fica es 
   computed: {
     url() {
       //Const query tras o valor passado na busca
@@ -60,11 +61,10 @@ export default {
         this.produtosTotal = Number(response.headers["x-total-count"]);
         console.log(response);
         console.log(this.produtos);
-
-     
       });
     },
   },
+    //Fica de olho em qualquer alteraçãa ou chamada
   watch: {
     url() {
       this.getProdutos();
