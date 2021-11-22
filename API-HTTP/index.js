@@ -14,7 +14,7 @@ function acessarTXT() {
   fetch('./doc.txt')
     .then(response => response.text())
     .then(body => {
-      conteudo.innerText = body;
+      //conteudo.innerText = body;
     })
 }
 
@@ -41,7 +41,11 @@ function buscaCep(cep) {
       console.log(json);
       for (let indice in json) {
         valor = json[indice];
-         conteudo1.innerHTML = (conteudo1.innerHTML) + "<br>" + valor
+        if (valor == "") {
+          conteudo1.innerHTML = (conteudo1.innerHTML)  + 'Valor não encontrado' 
+        }
+        conteudo1.innerHTML = (conteudo1.innerHTML) + valor +'<br>'
+        
       }
     })
 }
