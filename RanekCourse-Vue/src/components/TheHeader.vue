@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-nav {
+nav { 
   display: flex;
   align-items: center;
   justify-content: space-between;
