@@ -55,6 +55,22 @@ img {
   display: block;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
 .btn {
   display: block;
   padding: 10px 30px;

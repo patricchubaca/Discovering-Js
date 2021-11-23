@@ -1,40 +1,83 @@
 <template>
-  <section>
+  <section class="login">
+    <h1>Login</h1>
     <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Enter email"
-        />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-        />
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" v-model="login.email">
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha" v-model="login.senha">
+      <button class="btn" @click.prevent="logar">Logar</button>
     </form>
+    <p class="perdeu">
+      <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
+    </p>
+    <LoginCriar/>
   </section>
 </template>
 
 <script>
-export default {};
+import LoginCriar from "@/components/LoginCriar.vue";
+
+export default {
+  name: "Login",
+  components: {
+    LoginCriar
+  },
+  data() {
+    return {
+      login: {
+        email: "",
+        senha: ""
+      }
+    };
+  },
+  methods: {
+    logar() {}
+  }
+};
 </script>
 
 <style scoped>
+.login {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 40px;
+  color: #87f;
+}
+
+form {
+  display: grid;
+}
+
+.btn {
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.perdeu {
+  text-align: center;
+  margin: 20px auto 0 auto;
+}
+
+.perdeu a:hover {
+  color: #87f;
+  text-decoration: underline;
+}
+input{
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.3);
+  transition: all 0.3s;
+}
 </style>
