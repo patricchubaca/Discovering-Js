@@ -3,15 +3,15 @@
     <h1>Login</h1>
     <form>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" v-model="login.email">
+      <input type="email" name="email" id="email" v-model="login.email" />
       <label for="senha">Senha</label>
-      <input type="password" name="senha" id="senha" v-model="login.senha">
+      <input type="password" name="senha" id="senha" v-model="login.senha" />
       <button class="btn" @click.prevent="logar">Logar</button>
     </form>
     <p class="perdeu">
       <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
     </p>
-    <LoginCriar/>
+    <LoginCriar />
   </section>
 </template>
 
@@ -21,19 +21,22 @@ import LoginCriar from "@/components/LoginCriar.vue";
 export default {
   name: "Login",
   components: {
-    LoginCriar
+    LoginCriar,
   },
   data() {
     return {
       login: {
         email: "",
         senha: ""
-      }
+      },
     };
   },
   methods: {
-    logar() {}
-  }
+    logar() {
+      this.$store.dispatch("getUsuario", this.login.email);
+      this.$router.push({ name: "usuario" });
+    },
+  },
 };
 </script>
 
@@ -60,7 +63,6 @@ form {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .perdeu {
@@ -72,7 +74,7 @@ form {
   color: #87f;
   text-decoration: underline;
 }
-input{
+input {
   width: 100%;
   padding: 20px;
   border: none;

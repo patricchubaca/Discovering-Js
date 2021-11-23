@@ -63,7 +63,7 @@ export default {
         console.log(response);
      
       });
-      },1000)
+      },500)
       
     },
   },
