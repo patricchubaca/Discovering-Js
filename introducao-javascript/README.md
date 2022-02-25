@@ -1,3 +1,3 @@
 
 
-# Discovering-JavaScrit
+# Discovering-JavaScript
