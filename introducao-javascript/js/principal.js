@@ -31,7 +31,7 @@ for (var i = 0; i < pacientes.length; i++) {
         var imc = peso / (altura * altura);
         tdImc.textContent = Math.round(imc);
 
-        console.log(`O peso do ${nome} é ${peso} Kg então seu IMC é igual = ${imc}`);
+        console.log(`O peso do ${nome} é ${peso} Kg então seu IMC é igual = ${Math.round(imc)}`);
     }
 }
 
