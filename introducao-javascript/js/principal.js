@@ -1,55 +1,41 @@
-var paciente = document.querySelector("#primeiro-paciente")
 
-var tdNome = paciente.querySelector(".info-nome")
-var nome = tdNome.textContent;
+var pacientes = document.querySelectorAll(".paciente")
 
-var tdPeso = paciente.querySelector(".info-peso")
-var peso = tdPeso.textContent;
+for(var i = 0; i < pacientes.length; i++){
 
-var tdAltura = paciente.querySelector(".info-altura")
-var altura = tdAltura.textContent;
+    var paciente = pacientes[i];
 
-var tdImc = paciente.querySelector(".info-imc")
-var imc = tdImc.textContent;
+    var tdNome = paciente.querySelector(".info-nome")
+    var nome = tdNome.textContent;
 
-var tdGordura = paciente.querySelector(".info-gordura")
-var gordura = tdGordura.textContent;
+    var tdPeso = paciente.querySelector(".info-peso")
+    var peso = tdPeso.textContent;
 
-var imc = peso / (altura * altura);
+    var tdAltura = paciente.querySelector(".info-altura") 
+    var altura = tdAltura.textContent;
 
-tdImc.textContent = imc;
+    var tdImc = paciente.querySelector(".info-imc")
 
 
+    var tdGordura = paciente.querySelector(".info-gordura")
+    var gordura = tdGordura.textContent;
 
+    var pesoValido = true;
+    var alturaValida = true;
 
-console.log(`O peso do ${nome} é ${peso} Kg então seu IMC é igual = ${imc}`);
-console.log(altura);
-console.log(imc);
-console.log(gordura);
-
-var segundoPaciente = document.querySelector("#segundo-paciente");
-
-var tdPeso = segundoPaciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
-
-var segundotdAltura = segundoPaciente.querySelector(".info-altura")
-var altura = tdAltura.textContent;
-
-var tdImc = segundoPaciente.querySelector(".info-imc")
-var imc = tdImc.textContent;
-
-var imc = peso / (altura * altura);
-
-tdImc.textContent = imc;
-
-console.log(peso);
-console.log(altura);
-console.log(imc);
-console.log(gordura);
+if(peso < 0 || peso > 1000){
+    console.log("peso invalido");
+    pesoValido = false;
+    tdImc.textContent = "Peso Invalido";
+}
+if(pesoValido == true){
+    var imc = peso / (altura * altura);
+    tdImc.textContent = Math.round(imc);
+  
+    console.log(`O peso do ${nome} é ${peso} Kg então seu IMC é igual = ${imc}`);
+}
+}
 
 
 
-
-
-
-
+console.log(pacientes)
