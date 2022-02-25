@@ -16,7 +16,6 @@ for (var i = 0; i < pacientes.length; i++) {
 
     var tdImc = paciente.querySelector(".info-imc")
 
-
     var tdGordura = paciente.querySelector(".info-gordura")
     var gordura = tdGordura.textContent;
 
@@ -36,6 +35,3 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 }
 
-
-
-console.log(pacientes)
