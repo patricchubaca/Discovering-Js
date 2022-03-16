@@ -1,5 +1,13 @@
 
-var pacientes = document.querySelectorAll(".paciente")
+var pacientes = document.querySelectorAll(".paciente");
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault();
+    alert("teste");
+    
+});
+
 
 for (var i = 0; i < pacientes.length; i++) {
 
@@ -26,6 +34,7 @@ for (var i = 0; i < pacientes.length; i++) {
         console.log("peso invalido");
         pesoValido = false;
         tdImc.textContent = "Peso Invalido";
+        paciente.classList.add("paciente-invalido");
     }
     if (pesoValido == true) {
         var imc = peso / (altura * altura);
@@ -34,4 +43,5 @@ for (var i = 0; i < pacientes.length; i++) {
         console.log(`O peso do ${nome} é ${peso} Kg então seu IMC é igual = ${Math.round(imc)}`);
     }
 }
+
 
