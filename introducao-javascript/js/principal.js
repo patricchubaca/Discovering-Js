@@ -1,9 +1,15 @@
+var meuTitulo = document.querySelector(".titulo");
+meuTitulo.addEventListener("click" , function(){
+
+   console.log("Clicou");
+
+});
 
 var pacientes = document.querySelectorAll(".paciente");
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
-var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function(event) {
+    
     event.preventDefault();
 
     var form = document.querySelector("#form-adiciona");
@@ -25,14 +31,14 @@ botaoAdicionar.addEventListener("click", function(event) {
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
     gorduraTd.textContent = gordura;
-    imcTd.textContent = (pesoTd / (alturaTd * alturaTd)).toFixed(2);
-        //tdImc.textContent = imc.toFixed(2);
+    imcTd.textContent = (pesoTd / (alturaTd * alturaTd));
+    tdImc.textContent = imc.toFixed(2);
 
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
-    pacienteTr.appendChild(imcTd);
+    pacienteTr.appendChild(imc);
 
     var tabela = document.querySelector("#tabela-pacientes");
 
