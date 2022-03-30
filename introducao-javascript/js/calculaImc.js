@@ -23,7 +23,6 @@ for (var i = 0; i < pacientes.length; i++) {
     var alturaValida = true;
 
     if (peso < 0 || peso > 1000) {
-        console.log("peso invalido");
         pesoValido = false;
         tdImc.textContent = "Peso Invalido";
         paciente.classList.add("paciente-invalido");
