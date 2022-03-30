@@ -1,8 +1,11 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 botaoAdicionar.addEventListener("click", function(event) {
+
     event.preventDefault();
 
+    obtemPacienteDoFormulario();
+    
     var form = document.querySelector("#form-adiciona");
 
     var nome = form.nome.value;
@@ -36,3 +39,9 @@ botaoAdicionar.addEventListener("click", function(event) {
     tabela.appendChild(pacienteTr);
 
 });
+
+function obtemPacienteDoFormulario(){
+
+alert("function");
+
+}
