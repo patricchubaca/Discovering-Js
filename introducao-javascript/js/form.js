@@ -10,9 +10,15 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     pacienteTr = montaTr(paciente);    
 
+    validaPeso(paciente);
+
+    validaAltura(paciente);
+
     var tabela = document.querySelector("#tabela-pacientes");
 
     tabela.appendChild(pacienteTr);
+
+    form.reset();
 
 });
 
@@ -51,6 +57,29 @@ function montaTr(paciente){
     pacienteTr.appendChild(imcTd);
 
     return pacienteTr;
+}
 
+function validaPeso(peso){
+ 
+    if(peso >= 0 && peso < 200){
 
+        return true;
+
+    }else{
+
+        return false;
+    }
+}
+
+function validaAltura(altura){
+
+    if(altura > 0 && altura  < 200){
+
+      return true;
+
+  }else{
+
+   return false;
+
+  }
 }

@@ -19,12 +19,17 @@ for (var i = 0; i < pacientes.length; i++) {
     var tdGordura = paciente.querySelector(".info-gordura")
     var gordura = tdGordura.textContent;
 
-    var pesoValido = true;
-    var alturaValida = true;
+    var pesoValido = validaPeso(peso);
+    var alturaValida = validaAltura(altura);
 
-    if (peso < 0 || peso > 1000) {
+    if (!pesoValido) {
         pesoValido = false;
         tdImc.textContent = "Peso Invalido";
+        paciente.classList.add("paciente-invalido");
+    }
+       if (!alturaValida) {
+        alturaValida = false;
+        tdImc.textContent = "Altura inválida!";
         paciente.classList.add("paciente-invalido");
     }
     if (pesoValido == true) {
