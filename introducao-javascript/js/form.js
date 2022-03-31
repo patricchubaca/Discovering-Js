@@ -8,11 +8,16 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     var paciente = obtemPacienteDoFormulario(form);
 
-    pacienteTr = montaTr(paciente);    
+    pacienteTr = montaTr(paciente);  
 
-    validaPeso(paciente);
+    if(!validaPeso(paciente)){
 
-    validaAltura(paciente);
+        console.log("Peso Invalido");
+
+        return;
+    }
+
+    //validaAltura(paciente);
 
     var tabela = document.querySelector("#tabela-pacientes");
 
@@ -68,7 +73,7 @@ function validaPeso(peso){
     }else{
 
         return false;
-    }
+    }   
 }
 
 function validaAltura(altura){
