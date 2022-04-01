@@ -10,14 +10,14 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     pacienteTr = montaTr(paciente);  
 
-    if(!validaPeso(paciente)){
-
-        console.log("Peso Invalido");
+    if (!validaPaciente(paciente)) {
+    
+        alert("Dados Invalidos");
+        form.reset();
 
         return;
     }
 
-    //validaAltura(paciente);
 
     var tabela = document.querySelector("#tabela-pacientes");
 
@@ -64,6 +64,14 @@ function montaTr(paciente){
     return pacienteTr;
 }
 
+function validaPaciente(paciente){
+    if (validaPeso(paciente.peso) && validaAltura(paciente.altura)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function validaPeso(peso){
  
     if(peso >= 0 && peso < 200){
@@ -84,7 +92,6 @@ function validaAltura(altura){
 
   }else{
 
-   return false;
-
+      return false;
   }
 }
