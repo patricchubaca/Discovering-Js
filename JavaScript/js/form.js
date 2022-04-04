@@ -15,7 +15,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
         alerMessage.classList.remove('d-none');
 
-        const myTimeout = setTimeout(myGreeting, 3000);
+        const myTimeout = setTimeout(myGreeting, 1800);
 
         function myGreeting() {
             alerMessage.classList.add('d-none')
