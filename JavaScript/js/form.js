@@ -1,4 +1,5 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
+var alerMessage = document.querySelector("menssagem-erro");
 
 botaoAdicionar.addEventListener("click", function(event) {
 
@@ -11,13 +12,13 @@ botaoAdicionar.addEventListener("click", function(event) {
     pacienteTr = montaTr(paciente);  
 
     if (!validaPaciente(paciente)) {
-    
+
         alert("Dados Invalidos");
+
         form.reset();
 
         return;
     }
-
 
     var tabela = document.querySelector("#tabela-pacientes");
 
