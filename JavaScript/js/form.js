@@ -1,5 +1,5 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-var alerMessage = document.querySelector("menssagem-erro");
+var alerMessage = document.querySelector("#menssagem-erro");
 
 botaoAdicionar.addEventListener("click", function(event) {
 
@@ -13,18 +13,24 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     if (!validaPaciente(paciente)) {
 
-        alert("Dados Invalidos");
+        alerMessage.classList.remove('d-none');
 
-        form.reset();
+        const myTimeout = setTimeout(myGreeting, 3000);
 
-        return;
-    }
+        function myGreeting() {
+            alerMessage.classList.add('d-none')
+      }
 
-    var tabela = document.querySelector("#tabela-pacientes");
+      form.reset();
 
-    tabela.appendChild(pacienteTr);
+      return;
+  }
 
-    form.reset();
+  var tabela = document.querySelector("#tabela-pacientes");
+
+  tabela.appendChild(pacienteTr);
+
+  form.reset();
 
 });
 
@@ -74,7 +80,7 @@ function validaPaciente(paciente){
 }
 
 function validaPeso(peso){
- 
+
     if(peso >= 0 && peso < 200){
 
         return true;
