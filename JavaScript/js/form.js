@@ -1,5 +1,6 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 var alerMessage = document.querySelector("#menssagem-erro");
+var alerRegisterMessage = document.querySelector("#message-register");
 
 botaoAdicionar.addEventListener("click", function(event) {
 
@@ -19,18 +20,26 @@ botaoAdicionar.addEventListener("click", function(event) {
 
         function myGreeting() {
             alerMessage.classList.add('d-none')
-      }
+        }
 
-      form.reset();
+        form.reset();
 
-      return;
-  }
+        return;
+    }
 
-  var tabela = document.querySelector("#tabela-pacientes");
+    var tabela = document.querySelector("#tabela-pacientes");
 
-  tabela.appendChild(pacienteTr);
+    tabela.appendChild(pacienteTr);
 
-  form.reset();
+    form.reset();
+
+    alerRegisterMessage.classList.remove('d-none');
+
+    const myTimeout = setTimeout(myGreeting, 1800);
+
+    function myGreeting() {
+        alerRegisterMessage.classList.add('d-none');
+    }
 
 });
 
