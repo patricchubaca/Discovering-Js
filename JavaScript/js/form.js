@@ -14,13 +14,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     if (!validaPaciente(paciente)) {
 
-        alerMessage.classList.remove('d-none');
-
-        const myTimeout = setTimeout(myGreeting, 1800);
-
-        function myGreeting() {
-            alerMessage.classList.add('d-none')
-        }
+        messageError();
 
         form.reset();
 
@@ -33,13 +27,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     form.reset();
 
-    alerRegisterMessage.classList.remove('d-none');
-
-    const myTimeout = setTimeout(myGreeting, 1800);
-
-    function myGreeting() {
-        alerRegisterMessage.classList.add('d-none');
-    }
+    messageRegister();
 
 });
 
@@ -110,4 +98,28 @@ function validaAltura(altura){
 
       return false;
   }
+}
+
+function messageRegister(){
+
+    alerRegisterMessage.classList.remove('d-none');
+
+    const myTimeout = setTimeout(myGreeting, 1800);
+
+    function myGreeting() {
+
+        alerRegisterMessage.classList.add('d-none');
+    }    
+}
+
+function messageError(){
+
+    alerMessage.classList.remove('d-none');
+
+    const myTimeout = setTimeout(myGreeting, 1800);
+
+    function myGreeting() {
+
+        alerMessage.classList.add('d-none');
+    }
 }
